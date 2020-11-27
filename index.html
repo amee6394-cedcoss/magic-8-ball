@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Know your future
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
+           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            background-image: url("galaxy.gif");
+            font-family: 'Nerko One', cursive;        
+            font-size: 27px;
+            color: white;
+            height: 100vh;
+            font-style: bold;
+        }
+        #btn{
+            width: 100px;
+            border-radius: 30px;
+            background-color:teal;
+        }
+        #btn1{
+            width: 100px;
+            border-radius: 30px;
+            background-color:teal;
+        }
+        #btn3{
+            width: 100px;
+            border-radius: 30px;
+            background-color:teal;
+        }
+        #btn4{
+            width: 135px;
+            border-radius: 20px;
+            background-color:teal;
+        }
+        #btn5{
+            width: 100px;
+            border-radius: 30px;
+            background-color:teal;
+        }
+        #btn5:hover{
+            background-color: white;
+        }
+        #res{
+            border-radius: 20px;
+            border:5px solid #4de99c;
+        }
+        #demo{
+            transform: scale(0, 0);
+            transition: 2s;
+        }
+        #table{
+            transform: scale(0, 0);
+            transition: 3s;
+        }
+        /* #demo1{
+            transform: scale(0, 0);
+            transition: 3s;
+        } */
+    </style>
+    
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>Want to know your future?</h1>
+                    <h1> Magic 8 Ball</h1>
+                    <img class="img-fluid" id="img1" src="fortune3.gif">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <input type="text" id="res" placeholder="Name">
+                    <input type="button" onclick="printname();image();trans()" id="btn5" value="Go">
+                    <p id="demo"></p>
+                    <table id="table"></table>
+                    <p id="demo1"></p>
+                    <p id="demo3"></p>
+                    <P id="demo2"></P>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        var i=0;
+        function printname() {
+            var a = document.getElementById("res").value;
+            a == "" ? document.getElementById("demo").innerHTML = "Hello Welcome!" : document.getElementById("demo").innerHTML = "Hello" + "Welcome "+" " + a + " " + "!";
+            var html = "<tr><td>For every each question you have to pay 1$. You want to continue?</td></tr><tr><td><button id='btn' onclick=yes();image1();>yes</button></td></tr><tr><td><button id='btn1' onclick=no()>no</button></td></tr>"
+            document.getElementById("table").innerHTML = html;
+        }
+        function yes() {
+            var a = document.getElementById("res").value;
+            document.getElementById("demo").innerHTML = " ";
+            var userQuestion=["Will I get the promotion at work?","Will my ex come back into my life?","will I get married?","will I find a lover?"," will I find a job?","Will I marry my boyfriend/girlfriend?","Am I in the right career path?","Will I ever be able to win the lottery?","Will my boyfriend/girlfriend and I have children together?","Will I live a long life?" ];
+            var html="<tr><td><button id='btn3' onclick='next();trans2()'>Next</button></td></tr>";
+            document.getElementById("table").innerHTML = html;
+            document.getElementById("demo1").innerHTML =a+" "+" CLICK ON NEXT BUTTON";
+
+        }
+        function no() {
+            var a = document.getElementById("res").value;
+            document.getElementById("demo").innerHTML = " ";
+            document.getElementById("res").value=" ";
+            document.getElementById("demo1").innerHTML=" ";
+            document.getElementById("demo2").innerHTML=" ";
+            document.getElementById("demo3").innerHTML=" ";
+            document.getElementById("img1").src= "fortune3.gif";
+            document.getElementById("table").innerHTML = " Thank you" + " " + a + " " + " Bye Good luck";
+        }
+        function next(){
+            var html ="<tr><td><button id='btn4' onclick='shuffle()'>SHUFFLE THE BALLS</button></td></tr><tr><td><button id='btn4' onclick='quit()'>Quit</button></td></tr>";
+            document.getElementById("demo2").innerHTML = html;
+            if(i<10){
+            var userQuestion=["Will I get the promotion at work?","Will my ex come back into my life?","will I get married?","will I find a lover?"," will I find a job?","Will I marry my boyfriend/girlfriend?","Am I in the right career path?","Will I ever be able to win the lottery?","Will my boyfriend/girlfriend and I have children together?","Will I live a long life?" ];
+            document.getElementById("demo1").innerHTML = userQuestion[i];
+            i++;
+            document.getElementById("demo3").innerHTML="";
+        }
+        else{
+            no();
+        }
+    }
+    function shuffle(){
+        var num=["It is certain."," It is decidedly so."," Without a doubt.","Yes – definitely","You may rely on it."," Reply hazy, try again."," Ask again later.","Better not tell you now."," Cannot predict now.","Concentrate and ask again.","As I see it, yes.","Most likely."," Yes."," Signs point to yes."," Don't count on it."," My reply is no."," My sources say no.","Very doubtful."];
+        console.log(num[17]);
+        x=Math.floor(Math.random()*17);
+        console.log(x);
+        document.getElementById("demo3").innerHTML=num[x];
+    }
+    function image(){
+        document.getElementById("img1").src= "fortune1.gif";
+    }
+    function image1(){
+        document.getElementById("img1").src= "fortune2.gif";
+    }
+    function quit(){
+        no();
+    }
+    function trans(){
+        document.getElementById("demo").style.transform= "scale(1, 1)";
+        document.getElementById("table").style.transform= "scale(1, 1)";
+        
+    
+    }
+    function trans2(){
+        document.getElementById("demo1").style.transform= "scale(1, 1)";
+    }
+    
+    </script>
+</body>

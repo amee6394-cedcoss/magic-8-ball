@@ -101,6 +101,7 @@
                     <h1> Magic 8 Ball</h1>
                 </marquee>
                     <img class="img-fluid" id="img1" src="fortune3.gif">
+                    <audio src="sound1.mp3" id="bgm" autoplay></audio>
                 </div>
             </div>
         </div>
@@ -126,12 +127,15 @@
 
 
     <script>
+        var bgm1=document.getElementById("bgm");
         var i=0;
         function printname() {
             var a = document.getElementById("res").value;
             a == "" ? document.getElementById("demo").innerHTML = "Hello Welcome!" : document.getElementById("demo").innerHTML = "Hello" + "Welcome " + " " + a + " " + "!";
             var html = "<tr><td>For every each question you have to pay 1$. You want to continue?</td></tr>'<br>'<tr><td><button id='btn' onclick=yes();image1();>yes</button></td></tr><tr><td><button id='btn1' onclick=no()>no</button></td></tr>"
             document.getElementById("table").innerHTML = html;
+            bgm1.play();
+         
         }
         function yes() {
             document.getElementById("res").style.display="none";
@@ -140,8 +144,7 @@
             document.getElementById("demo").innerHTML = " ";
             var html = "<tr><td><button id='btn3' onclick='next();trans2()'>Next</button></td></tr>";
             document.getElementById("table").innerHTML = html;
-            document.getElementById("demo1").innerHTML = a + " " + " CLICK ON NEXT BUTTON";
-
+            document.getElementById("demo1").innerHTML = a + " " + "Read Instructions <br>1. CLICK ON <b>NEXT</b> IF YOU WANT TO CHANGE THE QUESTION<br>2. CLICK ON <b>SHUFFLE THE BALL</b> IF YOU WANT ANSWER.<br> 3. IF YOU WANT TO QUIT CLICK ON <b>QUIT</b>.";
         }
         function no() {
             document.getElementById("res").style.display="none";

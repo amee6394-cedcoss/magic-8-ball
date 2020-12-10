@@ -4,7 +4,6 @@
         function printname() {
             var bgm1 = document.getElementById("bgm");
             var a = document.getElementById("res").value;
-            localStorage.setItem("a1",a);
             document.getElementById("demo").innerHTML = "Hello" + "Welcome " + " " + a + " " + "!";
             var html = "<tr><td>For every each question you have to pay 1$. You want to continue?</td></tr>'<br>'<tr><td><button id='btn' onclick=yes();image1();>yes</button></td></tr><tr><td><button id='btn1' onclick=no()>no</button></td></tr>"
             document.getElementById("table").innerHTML = html;

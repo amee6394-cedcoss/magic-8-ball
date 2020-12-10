@@ -1,0 +1,68 @@
+            body {
+                background-image: url("galaxy.gif");
+                font-family: 'Nerko One', cursive;
+                font-size: 27px;
+                color: white;
+                height: 100vh;
+                font-style: oblique;
+            }
+
+            #btn {
+                width: 100px;
+                border-radius: 30px;
+                background-color: teal;
+            }
+
+            #btn1 {
+                width: 100px;
+                border-radius: 30px;
+                background-color: teal;
+            }
+
+            #btn3 {
+                width: 100px;
+                border-radius: 30px;
+                background-color: teal;
+            }
+
+            #btn4 {
+                width: 135px;
+                border-radius: 20px;
+                background-color: teal;
+            }
+
+            #btn5 {
+                width: 100px;
+                border-radius: 30px;
+                background-color: teal;
+            }
+
+            #btn5:hover {
+                background-color: white;
+            }
+
+            #btn6 {
+                width: 100px;
+                border-radius: 30px;
+                background-color: teal;
+            }
+
+            #res {
+                border-radius: 20px;
+                border: 5px solid #4de99c;
+                width: 200px;
+            }
+
+            #demo {
+                transform: scale(0, 0);
+                transition: 2s;
+            }
+
+            #img1 {
+                width: 200px;
+            }
+
+            #table {
+                transform: scale(0, 0);
+                transition: 3s;
+            }
